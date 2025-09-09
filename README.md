@@ -1,4 +1,4 @@
-<h3>Employee Management System (EMS)<h3>
+<h3>Employee Management System (EMS)</h3>
 <br>
 
 A full-stack Employee Management System built with Flask (Python), MySQL, and a simple HTML/CSS/JS frontend.
