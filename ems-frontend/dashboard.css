@@ -1,0 +1,124 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #6c2bd9;
+  color: #fff;
+  padding: 20px;
+}
+.sidebar h2 { margin-bottom: 30px; }
+.sidebar ul li {
+  list-style: none;
+  margin: 15px 0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.sidebar ul li.active, .sidebar ul li:hover { background: #5a21c9; }
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.topbar input {
+  padding: 8px;
+  width: 280px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+.topbar .profile {
+  display: flex;
+  align-items: center;
+}
+.topbar .profile img {
+  width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;
+}
+
+/* Stats Cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.card span { font-size: 14px; color: #555; }
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: auto;
+  gap: 20px;
+}
+.large { grid-column: span 2; }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+th, td {
+  border-bottom: 1px solid #eee;
+  padding: 8px;
+  text-align: left;
+}
+.paid { color: green; font-weight: bold; }
+
+/* Skills */
+.skills li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.skills span { width: 120px; }
+.skills .bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+}
+.figma { background: #ff3c00; width: 90%; }
+.adobexd { background: #ff007f; width: 70%; }
+.photoshop { background: #0077ff; width: 60%; }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .large { grid-column: span 1; }
+}
+@media (max-width: 600px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; display: flex; overflow-x: auto; }
+  .sidebar ul { display: flex; flex-wrap: nowrap; }
+  .sidebar ul li { margin: 5px; padding: 8px 12px; white-space: nowrap; }
+}

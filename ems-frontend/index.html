@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMS Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>EMS</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Skill Progress</li>
+      <li>Payroll</li>
+      <li>Employee</li>
+      <li>Jobs</li>
+      <li>Calendar</li>
+      <li>Settings</li>
+      <li>Help & Support</li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <input type="text" placeholder="Search for anything...">
+      <div class="profile">
+        <img src="assets/img/profile.jpg" alt="User">
+        <span>Kabir</span>
+      </div>
+    </header>
+
+    <!-- Stats Cards -->
+    <section class="stats">
+      <div class="card">140<br><span>Total Employee</span></div>
+      <div class="card">95<br><span>Total Present</span></div>
+      <div class="card">12<br><span>Total Absent</span></div>
+      <div class="card">09<br><span>Total On Leave</span></div>
+    </section>
+
+    <!-- Charts & Info -->
+    <section class="dashboard-grid">
+      
+      <!-- Team Performance -->
+      <div class="card large">
+        <h3>Team Performance</h3>
+        <canvas id="performanceChart"></canvas>
+      </div>
+
+      <!-- Employee Distribution -->
+      <div class="card">
+        <h3>Total Employee</h3>
+        <canvas id="employeePie"></canvas>
+      </div>
+
+      <!-- Payroll -->
+      <div class="card">
+        <h3>Payroll Activities</h3>
+        <table>
+          <tr><th>Month</th><th>Salary</th><th>Status</th></tr>
+          <tr><td>January</td><td>30000</td><td class="paid">Paid</td></tr>
+          <tr><td>February</td><td>30000</td><td class="paid">Paid</td></tr>
+        </table>
+      </div>
+
+      <!-- Events -->
+      <div class="card">
+        <h3>Events and Meetings</h3>
+        <ul>
+          <li>Marketing Meeting – 10:00 AM</li>
+          <li>Development Meeting – 01:00 PM</li>
+          <li>Designer Meeting – 03:00 PM</li>
+        </ul>
+      </div>
+
+      <!-- Skill Progress -->
+      <div class="card">
+        <h3>Skill Progress</h3>
+        <ul class="skills">
+          <li><span>Figma</span><div class="bar figma"></div></li>
+          <li><span>Adobe XD</span><div class="bar adobexd"></div></li>
+          <li><span>Photoshop</span><div class="bar photoshop"></div></li>
+        </ul>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Chart.js Script -->
+  <script>
+    // Team Performance (Line Chart)
+    const ctx1 = document.getElementById('performanceChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Performance',
+          data: [65, 70, 75, 72, 80, 85],
+          borderColor: '#6c2bd9',
+          backgroundColor: 'rgba(108, 43, 217, 0.1)',
+          fill: true,
+          tension: 0.3
+        }]
+      }
+    });
+
+    // Employee Distribution (Pie Chart)
+    const ctx2 = document.getElementById('employeePie').getContext('2d');
+    new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Present', 'Absent', 'On Leave'],
+        datasets: [{
+          data: [95, 12, 9],
+          backgroundColor: ['#4caf50', '#f44336', '#ff9800']
+        }]
+      }
+    });
+  </script>
+
+</body>
+</html>
+<div class="card">
+    <h3>Skill Progress</h3>
+    <ul class="skills-list">
+        <li>
+            <span class="skill-name">Figma</span>
+            <div class="skill-bar figma-bar"></div>
+        </li>
+        <li>
+            <span class="skill-name">Adobe XD</span>
+            <div class="skill-bar adobexd-bar"></div>
+        </li>
+        <li>
+            <span class="skill-name">Photoshop</span>
+            <div class="skill-bar photoshop-bar"></div>
+        </li>
+    </ul>
