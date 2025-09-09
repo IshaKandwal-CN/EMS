@@ -1,4 +1,5 @@
-<h1>Employee Management System (EMS)<h1>
+<h3>Employee Management System (EMS)<h3>
+<br>
 
 A full-stack Employee Management System built with Flask (Python), MySQL, and a simple HTML/CSS/JS frontend.
 Includes secure user authentication with email OTP verification, employee records, attendance tracking, and payroll management.
